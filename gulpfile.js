@@ -6,9 +6,15 @@
  * started at 09/02/2017
  */
 
-var gulp = require("gulp");
+var gulp = require( "gulp" ),
+	image = require( "gulp-image" );
 
 // --- Task for images
+gulp.task( "images", function() {
+	gulp.src( "src/img/**" )
+		.pipe( image() )
+		.pipe( gulp.dest( "assets/img" ) );
+} );
 
 // --- Task for styles
 
