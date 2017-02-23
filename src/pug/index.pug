@@ -2,9 +2,36 @@ doctype html
 html( lang="fr" )
 	head
 		meta( charset="utf/8" )
-		title Ma carte de visite
+		meta( name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0" )
 		link( rel="stylesheet", href="assets/css/styles.css" )
+		title Ma carte de visite
 
 	body
-		h1 Ma carte de visite
+		main( class="visitCard" )
+			section.face
+				h1
+					strong= lastname
+					= " "
+					span= firstname
+				p= position
+
+			section.back
+				h2= firstname + " " + lastname
+				dl
+					dt email
+					dd= email
+					dt téléphone
+					dd= phone
+					dt site web
+					dd= url
+
+		nav
+			a.flip( href="javascript:void(0);" )
+				include ../../assets/img/flip-icon.svg
+				= " "
+				span retourner la carte
+
+		footer
+			small ©2017 #[a(href="http://chrisrem.be") Gotrixx]
+
 		script( src="assets/js/script.js")

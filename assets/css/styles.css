@@ -1,0 +1,177 @@
+/* KatBizniss
+ *
+ * main styles for KatBiznisss
+ *
+ * coded by Gotrixx
+ * started at 09/02/2017
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  background: url(../img/main-bg.jpg);
+  background-size: 100% auto;
+  width: 100%;
+  min-height: 100%;
+  font: normal 62.5%/1.50 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #111; }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+main {
+  width: 90%; }
+
+section {
+  background: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  min-height: 40rem; }
+  section.face {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: url(../img/card-bg.jpg) center no-repeat;
+    background-size: 100%; }
+  section.back {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+
+h1 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 200;
+  font-size: 5rem;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25); }
+
+p {
+  margin: 0 auto;
+  color: #fff;
+  font-size: 4rem;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25); }
+
+h2 {
+  margin: 0 auto 5rem;
+  font-size: 4rem;
+  font-weight: 200; }
+
+nav {
+  display: none; }
+
+dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  font-size: 2em; }
+  dl dt {
+    width: 30%;
+    margin-right: 5%;
+    text-align: right; }
+  dl dd {
+    width: 65%;
+    margin: 0; }
+
+@media screen and (min-width: 640px) {
+  body {
+    -webkit-perspective: 80rem;
+            perspective: 80rem; }
+  main {
+    position: relative;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: -webkit-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out; }
+    main.flipped {
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+  section {
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+    section.back {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+  nav {
+    display: block;
+    width: 90%;
+    max-width: 30rem;
+    margin: 50rem auto 5rem;
+    font-size: 1.4rem;
+    text-align: left; }
+    nav a {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #fff;
+      text-decoration: none;
+      -webkit-transition: color .25s ease-in-out;
+      transition: color .25s ease-in-out; }
+      nav a svg {
+        height: 1.8rem;
+        margin-right: .5rem;
+        fill: #fff;
+        -webkit-transition: fill .25s ease-in-out, -webkit-transform .50s ease-in-out;
+        transition: fill .25s ease-in-out, -webkit-transform .50s ease-in-out;
+        transition: fill .25s ease-in-out, transform .50s ease-in-out;
+        transition: fill .25s ease-in-out, transform .50s ease-in-out, -webkit-transform .50s ease-in-out; }
+      nav a:hover {
+        color: red; }
+        nav a:hover svg {
+          fill: red;
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg); } }

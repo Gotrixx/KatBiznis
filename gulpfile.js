@@ -24,7 +24,9 @@ gulp.task( "images", function() {
 // --- Task for pug
 gulp.task( "html", function() {
 	gulp.src( "src/pug/**/*.pug" )
-		.pipe( pug( {} ) )
+		.pipe( pug( {
+			"data": require ("./src/data.json"),
+		} ) )
 		.pipe( gulp.dest( "." ) );
 } );
 
@@ -33,7 +35,7 @@ gulp.task( "css", function() {
 	gulp.src( "src/sass/**/*.scss" )
 		.pipe( sass().on( "error", sass.logError ) )
 		.pipe( autoprefixer() )
-		.pipe( csso() )
+		// .pipe( csso() )
 		.pipe( gulp.dest( "assets/css" ) );
 } );
 
@@ -47,11 +49,12 @@ gulp.task( "js", function() {
 // --- Watch tasks
 gulp.task( "watch", function() {
 	gulp.watch( "src/img/**", [ "images" ] );
-	gulp.watch( "src/pug/**/*.pug", [ "css" ] );
-	gulp.watch( "src/sass/**/*.scss", [ "html" ] );
+	gulp.watch( "src/pug/**/*.pug", [ "html" ] );
+	gulp.watch( "src/sass/**/*.scss", [ "css" ] );
 	gulp.watch( "src/js/**/*.js", [ "js" ] );
 } )
 
 // --- Aliases
-gulp.task( "default", [ "images", "css", "html", "js" ] );
+// gulp.task( "default", [ "images", "css", "html", "js" ] );
+gulp.task( "default", [ "css", "html"] );
 gulp.task( "work", [ "default", "watch" ] );
